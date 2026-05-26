@@ -1,4 +1,6 @@
 "use client";
+import React from "react";
+"use client";
 import { MessageCircle } from "lucide-react";
 
 const WHATSAPP = "+251933264444";
