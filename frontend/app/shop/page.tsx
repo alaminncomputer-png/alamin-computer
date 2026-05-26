@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import { useState, useEffect, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Search, SlidersHorizontal, X, ChevronDown } from "lucide-react";
@@ -23,7 +24,7 @@ const SORTS = [
   { value: "rating", label: "Best Rated" },
 ];
 
-export default function ShopPage() {
+function ShopPageInner() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -222,5 +223,13 @@ export default function ShopPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ShopPageInner />
+    </Suspense>
   );
 }
