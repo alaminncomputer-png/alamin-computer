@@ -1,5 +1,13 @@
 const mongoose = require('mongoose');
 
+const variantSchema = new mongoose.Schema({
+  ram: { type: String },
+  storage: { type: String },
+  price: { type: Number, required: true },
+  stock: { type: Number, default: 1 },
+  sku: { type: String },
+}, { _id: true });
+
 const specSchema = new mongoose.Schema({
   processor: { type: String, default: 'N/A' },
   ram: { type: String, default: 'N/A' },
@@ -69,6 +77,7 @@ const productSchema = new mongoose.Schema(
       min: [0, 'Stock cannot be negative'],
       default: 1,
     },
+    variants: [variantSchema],
     sold: { type: Number, default: 0 },
     specifications: specSchema,
     tags: [{ type: String, lowercase: true }],
@@ -79,7 +88,7 @@ const productSchema = new mongoose.Schema(
     isActive: { type: Boolean, default: true },
     warranty: { type: String, default: '3 months' },
     returnPolicy: { type: String, default: '7 days' },
-    weight: { type: Number }, // in grams for shipping
+    weight: { type: Number },
     ratings: {
       average: { type: Number, default: 0, min: 0, max: 5 },
       count: { type: Number, default: 0 },
@@ -91,7 +100,6 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Auto-generate slug from name
 productSchema.pre('save', function (next) {
   if (this.isModified('name')) {
     this.slug = this.name
@@ -102,7 +110,6 @@ productSchema.pre('save', function (next) {
   next();
 });
 
-// Virtual for discount percentage
 productSchema.virtual('discountPercent').get(function () {
   if (this.discountPrice && this.price > this.discountPrice) {
     return Math.round(((this.price - this.discountPrice) / this.price) * 100);
@@ -110,18 +117,4 @@ productSchema.virtual('discountPercent').get(function () {
   return 0;
 });
 
-// Virtual for effective price
-productSchema.virtual('effectivePrice').get(function () {
-  return this.discountPrice || this.price;
-});
-
-productSchema.set('toJSON', { virtuals: true });
-productSchema.set('toObject', { virtuals: true });
-
-productSchema.index({ name: 'text', description: 'text', brand: 'text', tags: 'text' });
-productSchema.index({ category: 1, isActive: 1 });
-productSchema.index({ price: 1 });
-productSchema.index({ 'ratings.average': -1 });
-productSchema.index({ createdAt: -1 });
-
-module.exports = mongoose.model('Product', productSchema);
+module.exports = mongoose.models.Product || mongoose.model('Product', productSchema);
