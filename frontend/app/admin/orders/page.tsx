@@ -16,7 +16,7 @@ const STATUS_COLORS: Record<string, string> = {
 
 const STATUSES = ["", "pending", "confirmed", "processing", "shipped", "delivered", "cancelled"];
 
-export default function AdminOrdersPage() {
+function Inner AdminOrdersPage() {
   const searchParams = useSearchParams();
   const [orders, setOrders] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -193,4 +193,9 @@ export default function AdminOrdersPage() {
       )}
     </div>
   );
+}
+
+import { Suspense } from "react";
+export default function OrdersPage() {
+  return <Suspense fallback={<div className="text-white p-10">Loading...</div>}><InnerOrdersPage /></Suspense>;
 }
