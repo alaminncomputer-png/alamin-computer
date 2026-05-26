@@ -49,7 +49,6 @@ body {
   overflow: hidden;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #04080f; }
 ::-webkit-scrollbar-thumb { background: #1a6bff; border-radius: 3px; }
@@ -57,12 +56,12 @@ body {
 .badge { @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold tracking-wide; }
 .card { @apply bg-[rgba(8,15,28,0.85)] border border-[rgba(26,107,255,0.18)] rounded-xl transition-all; }
 .btn-primary {
-  @apply bg-gradient-to-r from-blue-3 to-blue font-head font-bold tracking-wide rounded-lg px-6 py-3 text-white transition-all hover:opacity-90 hover:-translate-y-0.5 active:translate-y-0;
+  @apply bg-gradient-to-r from-blue-500 to-blue-700 font-bold tracking-wide rounded-lg px-6 py-3 text-white transition-all hover:opacity-90 hover:-translate-y-0.5 active:translate-y-0;
 }
 .btn-outline {
-  @apply border border-blue text-blue rounded-lg px-6 py-3 font-head font-semibold tracking-wide transition-all hover:bg-blue hover:text-white;
+  @apply border border-blue-500 text-blue-500 rounded-lg px-6 py-3 font-semibold tracking-wide transition-all hover:bg-blue-500 hover:text-white;
 }
 .btn-sm { @apply px-4 py-2 text-sm rounded-md; }
 .input {
-  @apply w-full bg-[rgba(26,107,255,0.08)] border border-[rgba(26,107,255,0.18)] rounded-lg px-4 py-3 text-text placeholder-muted-2 outline-none transition-colors focus:border-blue text-sm;
+  @apply w-full bg-[rgba(26,107,255,0.08)] border border-[rgba(26,107,255,0.18)] rounded-lg px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors focus:border-blue-500 text-sm;
 }
