@@ -13,6 +13,7 @@ const paymentRoutes = require('./routes/payments');
 const userRoutes = require('./routes/users');
 const uploadRoutes = require('./routes/upload');
 const adminRoutes = require('./routes/admin');
+const seedRoutes = require('./src/routes/seedRoutes');
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use('/api/payments', paymentRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/seed', seedRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
