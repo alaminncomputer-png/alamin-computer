@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #04080f;
+  --blue: #1a6bff;
+  --cyan: #00d4ff;
+  --text: #e8f0ff;
+  --muted: #7a90b8;
+  --border: rgba(26,107,255,0.18);
+  --green: #00c77a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+}
+
+.grid-bg {
+  background-image: linear-gradient(rgba(26,107,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,107,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-color: #04080f;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-animate { animation: ticker 30s linear infinite; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.pulse-dot { animation: pulse-dot 2s infinite; }
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #04080f; }
+::-webkit-scrollbar-thumb { background: #1a6bff; border-radius: 3px; }
+
+.badge { @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold tracking-wide; }
+.card { @apply bg-[rgba(8,15,28,0.85)] border border-[rgba(26,107,255,0.18)] rounded-xl transition-all; }
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-3 to-blue font-head font-bold tracking-wide rounded-lg px-6 py-3 text-white transition-all hover:opacity-90 hover:-translate-y-0.5 active:translate-y-0;
+}
+.btn-outline {
+  @apply border border-blue text-blue rounded-lg px-6 py-3 font-head font-semibold tracking-wide transition-all hover:bg-blue hover:text-white;
+}
+.btn-sm { @apply px-4 py-2 text-sm rounded-md; }
+.input {
+  @apply w-full bg-[rgba(26,107,255,0.08)] border border-[rgba(26,107,255,0.18)] rounded-lg px-4 py-3 text-text placeholder-muted-2 outline-none transition-colors focus:border-blue text-sm;
+}
