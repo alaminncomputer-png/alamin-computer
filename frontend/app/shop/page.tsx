@@ -242,3 +242,4 @@ export default function ShopPage() {
     </Suspense>
   );
 }
+export const dynamic = 'force-dynamic';
