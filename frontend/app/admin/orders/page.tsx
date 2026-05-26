@@ -16,7 +16,7 @@ const STATUS_COLORS: Record<string, string> = {
 
 const STATUSES = ["", "pending", "confirmed", "processing", "shipped", "delivered", "cancelled"];
 
-function Inner AdminOrdersPage() {
+function AdminOrdersPageInner() {
   const searchParams = useSearchParams();
   const [orders, setOrders] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
