@@ -146,9 +146,9 @@ export default function DashboardPage() {
           {activeTab === "addresses" && (
             <div>
               <h2 className="font-head text-2xl font-bold text-white mb-5">My Addresses</h2>
-              {user.addresses && user.addresses.length > 0 ? (
+              {((user as any).addresses) && ((user as any).addresses).length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {user.addresses.map((addr: any) => (
+                  {((user as any).addresses).map((addr: any) => (
                     <div key={addr._id} className="card rounded-xl p-4">
                       <div className="flex justify-between items-start mb-2">
                         <span className="text-cyan text-xs font-semibold">{addr.label}</span>
