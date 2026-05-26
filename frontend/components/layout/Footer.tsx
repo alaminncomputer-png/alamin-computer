@@ -3,9 +3,9 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const WA = process.env.NEXT_PUBLIC_WHATSAPP || "+251900000000";
-  const TG = process.env.NEXT_PUBLIC_TELEGRAM || "alamincomputer";
-  const FB = process.env.NEXT_PUBLIC_FACEBOOK || "https://facebook.com/alamincomputer";
+  const WA = process.env.NEXT_PUBLIC_WHATSAPP || "+251933264444";
+  const TG = process.env.NEXT_PUBLIC_TELEGRAM || "Al_Aminn_computer";
+  const FB = process.env.NEXT_PUBLIC_FACEBOOK || "https://facebook.com/Al_Aminn_computer";
 
   return (
     <footer className="border-t border-[rgba(26,107,255,0.15)] bg-[rgba(8,15,28,0.8)] mt-20">
@@ -140,11 +140,11 @@ export default function Footer() {
               <span>{WA}</span>
             </a>
             <a
-              href="mailto:info@alamincomputer.com"
+              href="mailto:info@Al_Aminn_computer.com"
               className="flex items-start gap-3 text-muted text-sm hover:text-text transition-colors"
             >
               <Mail className="w-4 h-4 mt-0.5 text-blue flex-shrink-0" />
-              <span>info@alamincomputer.com</span>
+              <span>info@Al_Aminn_computer.com</span>
             </a>
             <div className="flex items-start gap-3 text-muted text-sm">
               <MapPin className="w-4 h-4 mt-0.5 text-blue flex-shrink-0" />

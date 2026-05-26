@@ -8,8 +8,8 @@ export const metadata: Metadata = {
     "Learn about Alamin Computer — Ethiopia's trusted laptop store for wholesale and retail customers. Quality laptops, fair prices, excellent service.",
 };
 
-const WA = process.env.NEXT_PUBLIC_WHATSAPP || "+251900000000";
-const TG = process.env.NEXT_PUBLIC_TELEGRAM || "alamincomputer";
+const WA = process.env.NEXT_PUBLIC_WHATSAPP || "+251933264444";
+const TG = process.env.NEXT_PUBLIC_TELEGRAM || "Al_Aminn_computer";
 
 export default function AboutPage() {
   return (

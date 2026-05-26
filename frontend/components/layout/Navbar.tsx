@@ -43,8 +43,8 @@ export default function Navbar() {
     }
   };
 
-  const WA = process.env.NEXT_PUBLIC_WHATSAPP || "+251900000000";
-  const TG = process.env.NEXT_PUBLIC_TELEGRAM || "alamincomputer";
+  const WA = process.env.NEXT_PUBLIC_WHATSAPP || "+251933264444";
+  const TG = process.env.NEXT_PUBLIC_TELEGRAM || "Al_Aminn_computer";
 
   return (
     <nav

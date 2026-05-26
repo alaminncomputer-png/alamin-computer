@@ -3,8 +3,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Truck, Award } from "lucide-react";
 
-const WA = process.env.NEXT_PUBLIC_WHATSAPP || "+251900000000";
-const TG = process.env.NEXT_PUBLIC_TELEGRAM || "alamincomputer";
+const WA = process.env.NEXT_PUBLIC_WHATSAPP || "+251933264444";
+const TG = process.env.NEXT_PUBLIC_TELEGRAM || "Al_Aminn_computer";
 
 export default function HeroSection() {
   return (

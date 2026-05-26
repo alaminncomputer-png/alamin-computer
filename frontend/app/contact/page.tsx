@@ -7,9 +7,9 @@ export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
   const [loading, setLoading] = useState(false);
 
-  const WA = process.env.NEXT_PUBLIC_WHATSAPP || "+251900000000";
-  const TG = process.env.NEXT_PUBLIC_TELEGRAM || "alamincomputer";
-  const FB = process.env.NEXT_PUBLIC_FACEBOOK || "https://facebook.com/alamincomputer";
+  const WA = process.env.NEXT_PUBLIC_WHATSAPP || "+251933264444";
+  const TG = process.env.NEXT_PUBLIC_TELEGRAM || "Al_Aminn_computer";
+  const FB = process.env.NEXT_PUBLIC_FACEBOOK || "https://facebook.com/Al_Aminn_computer";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -102,13 +102,13 @@ export default function ContactPage() {
           </a>
 
           {/* Email */}
-          <a href="mailto:info@alamincomputer.com" className="card rounded-xl p-5 flex items-center gap-4 hover:border-blue/50 group transition-colors">
+          <a href="mailto:info@Al_Aminn_computer.com" className="card rounded-xl p-5 flex items-center gap-4 hover:border-blue/50 group transition-colors">
             <div className="w-12 h-12 rounded-xl bg-blue/10 border border-blue/20 flex items-center justify-center flex-shrink-0 group-hover:bg-blue/20 transition-colors">
               <Mail className="w-5 h-5 text-blue" />
             </div>
             <div>
               <p className="text-white font-semibold">Email</p>
-              <p className="text-muted text-sm">info@alamincomputer.com</p>
+              <p className="text-muted text-sm">info@Al_Aminn_computer.com</p>
               <p className="text-cyan text-xs mt-0.5">Send email →</p>
             </div>
           </a>
