@@ -13,7 +13,7 @@ const paymentRoutes = require('./routes/payments');
 const userRoutes = require('./routes/users');
 const uploadRoutes = require('./routes/upload');
 const adminRoutes = require('./routes/admin');
-const seedRoutes = require('./src/routes/seedRoutes');
+const seedRoutes = require('./routes/seed');
 
 const app = express();
 
