@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { WhatsAppFloat } from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: {
@@ -50,6 +51,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+      <WhatsAppFloat />
         </div>
         <Toaster
           position="top-right"
