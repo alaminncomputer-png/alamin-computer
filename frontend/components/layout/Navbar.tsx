@@ -6,6 +6,7 @@ import {
   ShoppingCart, Search, Menu, X, ChevronDown, User, Heart, LogOut, LayoutDashboard
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useCartStore } from "@/store/cartStore";
 import { useAuthStore } from "@/store/authStore";
 
@@ -126,6 +127,7 @@ export default function Navbar() {
           href="/cart"
           className="relative flex items-center gap-1.5 bg-[rgba(26,107,255,0.1)] border border-[rgba(26,107,255,0.2)] text-text text-sm px-3 py-2 rounded-md hover:border-blue transition-colors"
         >
+          <ThemeToggle />
           <ShoppingCart className="w-4 h-4" />
           <span className="hidden sm:block">Cart</span>
           {count > 0 && (
