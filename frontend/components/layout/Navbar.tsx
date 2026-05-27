@@ -122,12 +122,14 @@ export default function Navbar() {
           </a>
         </div>
 
+        {/* Theme Toggle */}
+        <ThemeToggle />
+
         {/* Cart */}
         <Link
           href="/cart"
           className="relative flex items-center gap-1.5 bg-[rgba(26,107,255,0.1)] border border-[rgba(26,107,255,0.2)] text-text text-sm px-3 py-2 rounded-md hover:border-blue transition-colors"
         >
-          <ThemeToggle />
           <ShoppingCart className="w-4 h-4" />
           <span className="hidden sm:block">Cart</span>
           {count > 0 && (
