@@ -37,6 +37,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/seed', seedRoutes);
+app.use('/api/blog', require('./routes/blog'));
 
 // Health check
 app.get('/api/health', (req, res) => {

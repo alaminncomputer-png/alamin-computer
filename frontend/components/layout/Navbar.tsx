@@ -26,6 +26,7 @@ const navLinks = [
   { href: "/shop?category=student", label: "Student" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Navbar() {
