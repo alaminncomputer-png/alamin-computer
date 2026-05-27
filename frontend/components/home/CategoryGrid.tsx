@@ -7,6 +7,10 @@ const categories = [
   { slug: "ultrabook", icon: "✨", label: "Ultrabooks", sub: "Thin, Light, Premium", color: "from-cyan/10 to-blue/5" },
   { slug: "workstation", icon: "🖥️", label: "Workstation", sub: "High-End Professionals", color: "from-orange/10 to-blue-3/10" },
   { slug: "wholesale", icon: "📦", label: "Wholesale", sub: "Bulk Orders, Best Prices", color: "from-blue/20 to-blue-3/10" },
+  { slug: "desktop", icon: "🖥️", label: "Desktop", sub: "All-in-One, Gaming PCs", color: "from-blue/20 to-cyan/10" },
+  { slug: "printer", icon: "🖨️", label: "Printer", sub: "Inkjet, Laser, Multifunction", color: "from-green/10 to-blue/10" },
+  { slug: "accessories", icon: "🎧", label: "Accessories", sub: "Mouse, Keyboard, Bags", color: "from-purple-900/30 to-blue/10" },
+  { slug: "preorder", icon: "⏳", label: "Pre-Order", sub: "Reserve Before Arrival", color: "from-orange-500/20 to-blue/10", href: "/preorder" },
 ];
 
 export default function CategoryGrid() {
@@ -25,7 +29,7 @@ export default function CategoryGrid() {
         {categories.map((cat) => (
           <Link
             key={cat.slug}
-            href={`/shop?category=${cat.slug}`}
+            href={cat.href || `/shop?category=${cat.slug}`}
             className={`group relative bg-gradient-to-br ${cat.color} border border-[rgba(26,107,255,0.15)] rounded-xl p-5 hover:border-[rgba(26,107,255,0.5)] hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(26,107,255,0.15)]`}
           >
             <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
