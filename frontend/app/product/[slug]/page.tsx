@@ -9,6 +9,7 @@ import {
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import api from "@/lib/api";
+import ReviewForm from "@/components/ReviewForm";
 import { useCartStore } from "@/store/cartStore";
 import { useAuthStore } from "@/store/authStore";
 import ProductCard from "@/components/shop/ProductCard";
@@ -346,6 +347,12 @@ export default function ProductPage() {
                 </div>
               ))
             )}
+
+            {/* Write Review Form */}
+            <div style={{marginTop:'24px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(26,107,255,0.2)',borderRadius:'16px',padding:'20px'}}>
+              <h3 style={{color:'white',fontWeight:'bold',fontSize:'16px',marginBottom:'16px'}}>⭐ Write a Review</h3>
+              <ReviewForm productId={product._id} onReviewAdded={(r: any) => setReviews((prev: any[]) => [r, ...prev])} />
+            </div>
           </div>
         )}
       </div>
