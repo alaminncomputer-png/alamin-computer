@@ -9,6 +9,7 @@ export default function PreOrderPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = () => {
+    if (!form.name || !form.phone || !form.product) { alert("Fill all required fields!"); return; }
     const msg = "PRE-ORDER - Name: " + form.name + " | Phone: " + form.phone + " | Product: " + form.product + " | Notes: " + (form.notes || "None");
     window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank");
     setSubmitted(true);
@@ -31,8 +32,8 @@ export default function PreOrderPage() {
         <div style={{display:"flex",flexDirection:"column",gap:"14px"}}>
           <input value={form.name} onChange={e => setForm(f => ({...f, name: e.target.value}))} placeholder="Your Name *" style={{width:"100%",background:"rgba(255,255,255,0.07)",border:"1px solid rgba(255,255,255,0.1)",borderRadius:"8px",padding:"12px",color:"white",outline:"none",boxSizing:"border-box"}} />
           <input value={form.phone} onChange={e => setForm(f => ({...f, phone: e.target.value}))} placeholder="Phone Number *" style={{width:"100%",background:"rgba(255,255,255,0.07)",border:"1px solid rgba(255,255,255,0.1)",borderRadius:"8px",padding:"12px",color:"white",outline:"none",boxSizing:"border-box"}} />
-          <input value={form.product} onChange={e => setForm(f => ({...f, product: e.target.value}))} placeholder="Product You Want * (e.g. HP EliteBook i7)" style={{width:"100%",background:"rgba(255,255,255,0.07)",border:"1px solid rgba(255,255,255,0.1)",borderRadius:"8px",padding:"12px",color:"white",outline:"none",boxSizing:"border-box"}} />
-          <textarea value={form.notes} onChange={e => setForm(f => ({...f, notes: e.target.value}))} placeholder="Notes: budget, specs, delivery location..." rows={3} style={{width:"100%",background:"rgba(255,255,255,0.07)",border:"1px solid rgba(255,255,255,0.1)",borderRadius:"8px",padding:"12px",color:"white",outline:"none",boxSizing:"border-box",resize:"none"}} />
+          <input value={form.product} onChange={e => setForm(f => ({...f, product: e.target.value}))} placeholder="Product You Want *" style={{width:"100%",background:"rgba(255,255,255,0.07)",border:"1px solid rgba(255,255,255,0.1)",borderRadius:"8px",padding:"12px",color:"white",outline:"none",boxSizing:"border-box"}} />
+          <textarea value={form.notes} onChange={e => setForm(f => ({...f, notes: e.target.value}))} placeholder="Notes: budget, specs..." rows={3} style={{width:"100%",background:"rgba(255,255,255,0.07)",border:"1px solid rgba(255,255,255,0.1)",borderRadius:"8px",padding:"12px",color:"white",outline:"none",boxSizing:"border-box",resize:"none"}} />
           <button onClick={handleSubmit} style={{width:"100%",padding:"14px",borderRadius:"12px",background:"#25d366",border:"none",color:"white",fontWeight:"bold",fontSize:"16px",cursor:"pointer"}}>📱 Send via WhatsApp</button>
           <a href={"https://t.me/" + TELEGRAM} target="_blank" rel="noopener noreferrer" style={{width:"100%",padding:"14px",borderRadius:"12px",background:"#229ed9",color:"white",fontWeight:"bold",fontSize:"16px",display:"block",textAlign:"center",textDecoration:"none"}}>✈️ Order via Telegram</a>
         </div>
