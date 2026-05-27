@@ -65,3 +65,18 @@ body {
 .input {
   @apply w-full bg-[rgba(26,107,255,0.08)] border border-[rgba(26,107,255,0.18)] rounded-lg px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors focus:border-blue-500 text-sm;
 }
+
+[data-theme="light"] {
+  background: #f0f4ff !important;
+  color: #0a0f1e !important;
+}
+
+[data-theme="light"] body {
+  background: #f0f4ff !important;
+  color: #0a0f1e !important;
+}
+
+[data-theme="light"] .card {
+  background: rgba(255,255,255,0.9) !important;
+  border-color: rgba(26,107,255,0.2) !important;
+}
