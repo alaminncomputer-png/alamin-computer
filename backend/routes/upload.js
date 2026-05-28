@@ -63,7 +63,7 @@ router.post('/image', protect, adminOnly, upload.single('image'), asyncHandler(a
 }));
 
 // ── Upload Multiple Images ─────────────────────────
-router.post('/images', protect, adminOnly, upload.array('images', 10), asyncHandler(async (req, res) => {
+router.post("/images", upload.array('images', 10), asyncHandler(async (req, res) => {
   if (!req.files?.length) {
     res.status(400);
     throw new Error('No images provided.');
