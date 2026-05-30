@@ -69,10 +69,16 @@ export default function AdminProductsPage() {
     if (!files || files.length === 0) return;
     setUploadingImg(true);
     try {
-      const fd = new FormData();
-      Array.from(files).forEach(f => fd.append("images", f));
-      const { data } = await api.post("/upload/product-image", fd, { headers: { "Content-Type": "multipart/form-data" } });
-      setUploadedImages(prev => [...prev, ...data.images]);
+      const uploaded = [];
+      for (const file of Array.from(files)) {
+        const fd2 = new FormData();
+        fd2.append("file", file);
+        fd2.append("upload_preset", "ml_default");
+        const res = await fetch("https://api.cloudinary.com/v1_1/dlqw6mkns/image/upload", { method: "POST", body: fd2 });
+        const d = await res.json();
+        if (d.secure_url) uploaded.push({ url: d.secure_url, publicId: d.public_id });
+      }
+      setUploadedImages(prev => [...prev, ...uploaded]);
       toast.success("Images uploaded!");
     } catch {
       toast.error("Image upload failed");
